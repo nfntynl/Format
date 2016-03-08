@@ -10,13 +10,13 @@ import Foundation
 import CoreLocation
 import AddressBook
 
+@available(iOS 9.0, *)
 public extension CLPlacemark {
     /**
      Formats a CLPlacemark to a string corresponding to the current locale's formatting rules. Uses deprectated AddressBook keys to read the address dictionary and current Contacts framework formatter for formatting.
      
      - returns: Formatted address string.
      */
-    @available(iOS, deprecated=9.0)
     public func format() -> String {
         // Uses deprecated Address book keys since there's no interoperability between CLPlacemark and ContactsKit yet.
         guard let addressDictionary = self.addressDictionary else {
